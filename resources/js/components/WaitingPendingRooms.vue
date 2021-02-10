@@ -165,11 +165,12 @@ export default {
             var third = []
 
             this.pendingRoom.forEach(patient => {
-                if (patient.priority >= 5) {
+                console.log(patient)
+                if (patient.priority >= 4.5) {
                     first.push(patient)
-                } else if (patient.type == 'child' || patient.type == 'elder') {
+                } else if (patient.type == 'Niño' || patient.type == 'Anciano') {
                     second.push(patient)
-                } else if (patient.type == 'young') {
+                } else if (patient.type == 'Joven') {
                     third.push(patient)
                 }
             })
@@ -178,19 +179,28 @@ export default {
             second.sort(((a, b) => b.priority - a.priority))
             third.sort(((a, b) => b.priority - a.priority))
 
-            first.forEach(patient => {
-                array_optimized.push(patient)
-            })
-
-            second.forEach(patient => {
-                array_optimized.push(patient)
-            })
-
-            third.forEach(patient => {
-                array_optimized.push(patient)
-            })
+            if (first.length > 0) {
+                first.forEach(patient => {
+                    array_optimized.push(patient)
+                })    
+            }
             
-            this.pendingRoom = array_optimized.slice()
+            if (second.length > 0) {
+                second.forEach(patient => {
+                    array_optimized.push(patient)
+                })    
+            }
+            
+            if (third.length > 0) {
+                third.forEach(patient => {
+                    array_optimized.push(patient)
+                })    
+            }
+            
+            if (array_optimized.length > 0) {
+                this.pendingRoom = array_optimized.slice()    
+            }
+            
 
         }
     }

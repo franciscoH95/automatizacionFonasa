@@ -12,6 +12,6 @@ class HospitalsTableSeeder extends Seeder
      */
     public function run()
     {
-        Hospital::create(['name' => 'Hospital Metropolitano de santiago']);
+        Hospital::create(['name' => 'Hospital Metropolitano de Santiago']);
     }
 }
