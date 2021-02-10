@@ -4,7 +4,7 @@
             <b-card border-variant="success" header="Consultas Libres" header-class="text-center">
                 <b-overlay :show="showOverlay" rounded="sm">
                     <div v-for="(consultation, index) in freeConsultations" :key="index">
-                        <b-card class="mb-2" style="max-width: 30rem; max-height: 5rem;">
+                        <b-card class="mb-2" style="max-width: 100%; max-height: 5rem;">
                             <h6 class="mb-1">{{ consultation.specialist_name }}</h6> 
                             <div class="d-flex justify-content-between">
                                 {{ consultation.type_consultation }} <em>{{consultation.state}}</em>
@@ -14,13 +14,13 @@
                 </b-overlay>
             </b-card>
         </div>
-        <div>
+        <div class="pb-2">
             <b-card border-variant="danger" header="Consultas Ocupadas" header-bg-variant="transparent" header-class="text-center">
                 <b-overlay :show="showOverlay" rounded="sm">
                 <div v-for="(consultation, index) in busyConsultations" :key="index">
                     <div v-for="(patient, index) in patients" :key="index">
                         <div v-if="patient.id == consultation.attending_patient">
-                            <b-card class="mb-2" style="max-width: 30rem; max-height: 5rem;">
+                            <b-card class="mb-2" style="max-width: 100%; max-height: 5rem;">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="mb-1">{{ consultation.specialist_name }}</h6>
                                     <em>{{consultation.state}}</em>

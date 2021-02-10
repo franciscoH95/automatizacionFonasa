@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-card bg-variant="light" header="Pacientes Fumadores" header-class="text-center">
-            <b-table striped hover :items="patients" :fields="fields"></b-table>
+            <b-table striped responsive small :items="patients" :fields="fields"></b-table>
         </b-card>
     </div>
 </template>

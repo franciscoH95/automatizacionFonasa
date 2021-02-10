@@ -36,7 +36,7 @@
                 <b-alert show variant="danger">Ficha Clinica no existe</b-alert>
             </div>
 
-            <b-table striped hover :items="patients" :fields="fields"></b-table>
+            <b-table striped responsive small :items="patients" :fields="fields"></b-table>
             
         </b-card>
     </div>

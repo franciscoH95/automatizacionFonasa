@@ -2,14 +2,7 @@
     <div>
         <b-card bg-variant="light" header="Paciente mas Anciano" header-class="text-center">
             <div v-for="(patient, index) in olderPatients" :key="index">
-                <b-alert show variant="info">
-                    Nombre: {{patient.name}} <br>
-                    Edad: {{patient.age}} <br>
-                    N° Historia Clinica: {{patient.num_medical_history}} <br>
-                    Prioridad: {{patient.priority}} <br>
-                    Riesgo: {{patient.risk}} <br>
-                    Categoria: {{patient.type}}
-                </b-alert>
+                <b-table striped responsive small :items="olderPatients" :fields="fields"></b-table>
             </div>
         </b-card>
     </div>
@@ -22,6 +15,32 @@ export default {
     data() {
         return {
             olderPatients: [],
+            fields: [
+                {
+                    label: 'Nombre',
+                    key: 'name'
+                },
+                {
+                    label: 'Edad',
+                    key: 'age'
+                },
+                {
+                    label: 'N° Historia Clinica',
+                    key: 'numHistoryMedical'
+                },
+                {
+                    label: 'Prioridad',
+                    key: 'priority'
+                },
+                {
+                    label: 'Riesgo',
+                    key: 'risk'
+                },
+                {
+                    label: 'Categoria',
+                    key: 'category'
+                },
+            ],
         }
     },
 
@@ -45,7 +64,14 @@ export default {
                     patient.type = 'Anciano'
                 }
                 
-                this.olderPatients.push(patient)
+                this.olderPatients.push({
+                    name: patient.name,
+                    age: patient.age,
+                    numHistoryMedical: patient.num_medical_history,
+                    priority: patient.priority,
+                    risk: patient.risk,
+                    category: patient.type,
+                })
                 
                 
             })

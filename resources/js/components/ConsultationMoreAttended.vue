@@ -2,11 +2,7 @@
     <div>
         <b-card bg-variant="light" header="Menu de Atención" header-class="text-center">
             <div v-for="(consultation, index) in fetchedConsultations" :key="index">
-                <b-alert show variant="info">
-                    Especialista: {{consultation.specialist_name}} <br>
-                    Consulta: {{consultation.type_consultation}} <br>
-                    Cantidad de pacientes atendidos: {{consultation.number_patients}}
-                </b-alert>
+                <b-table striped responsive small :items="fetchedConsultations" :fields="fields"></b-table>
             </div>
             
         </b-card>
@@ -20,6 +16,20 @@ export default {
     data(){
         return {
             fetchedConsultations: [],
+            fields: [
+                {
+                    label: 'Especialista',
+                    key: 'specialist'
+                },
+                {
+                    label: 'Consulta',
+                    key: 'typeConsultation'
+                },
+                {
+                    label: 'N° pacientes atendidos',
+                    key: 'numPatient'
+                },
+            ],
         }
     },
 
@@ -34,7 +44,11 @@ export default {
                 this.fetchedConsultations = null
             } else {
                 response.data.forEach(consultation => {
-                    this.fetchedConsultations.push(consultation)
+                    this.fetchedConsultations.push({
+                        specialist: consultation.specialist_name,
+                        typeConsultation: consultation.type_consultation,
+                        numPatient: consultation.number_patients
+                    })
                 });
             }
         }

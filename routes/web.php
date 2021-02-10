@@ -39,3 +39,13 @@ Route::get('/fetchconsultation', 'ConsultationController@fetchConsultation');
 Route::put('/updateconsultation', 'ConsultationController@update');
 
 Route::put('/freeconsultation', 'ConsultationController@freeConsultation');
+
+Route::get('/gethospitals', 'HospitalController@getHospitals');
+
+Route::get('/getusers', 'UserController@getUsers');
+
+Route::post('/newhospital', 'HospitalController@create');
+
+Route::get('/getroles', 'UserController@getRoles');
+
+Route::post('/newuser', 'UserController@create');

@@ -5,12 +5,12 @@
         </div>
         <div v-if="ruta == null">
             <b-row>
-                <b-col md="4">
+                <b-col xs="12" lg="4">
                     <consultations
                     :bus="bus"
                     ></consultations>  
                 </b-col>
-                <b-col md="4">
+                <b-col xs="12" lg="4">
                     <b-card bg-variant="light" header="Menu de Atención" class="text-center">
                         <b-list-group class="pb-4">
                             <b-list-group-item variant="info" button @click="onClick('1')">Atender Paciente</b-list-group-item>
@@ -27,7 +27,7 @@
                         <b-button variant="outline-danger" @click="sendFreeConsultations()">Liberar Consultas</b-button>
                     </b-card>
                 </b-col>
-                <b-col md="4">
+                <b-col xs="12" lg="4">
                     <waiting-room
                     :bus="bus"
                     :hospital="hospital"

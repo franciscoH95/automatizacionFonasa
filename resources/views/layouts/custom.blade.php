@@ -27,7 +27,6 @@
         <div class="content">
             <div class="box-image">
                 <img src="{{asset("images/icono-hospital-sanidad-cruz-roja.png")}}" alt="px">
-                
             </div>
             <div class="title m-b-md">
                 Consultorio

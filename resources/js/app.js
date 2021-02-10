@@ -29,6 +29,7 @@ Vue.use(IconsPlugin)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('view-receptionist', require('./components/ViewReceptionist.vue').default);
+Vue.component('view-admin', require('./components/ViewAdmin').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

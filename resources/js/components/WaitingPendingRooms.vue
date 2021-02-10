@@ -2,12 +2,12 @@
     <div>
         <div class="pb-2">
             <b-card bg-variant="light" header="Sala de espera" header-class="text-center">
-                <b-table striped hover :items="waitingRoom" :fields="fields"></b-table>
+                <b-table striped small responsive :items="waitingRoom" :fields="fields"></b-table>
             </b-card> 
         </div>
-        <div>
+        <div class="pb-2">
             <b-card bg-variant="light" header="Sala pendientes" header-class="text-center">
-                <b-table striped hover :items="pendingRoom" :fields="fields"></b-table>
+                <b-table striped small responsive :items="pendingRoom" :fields="fields"></b-table>
             </b-card> 
         </div> 
     </div>
