@@ -32,9 +32,21 @@
                 Consultorio
             </div>
         </div>
-        <main class="main-content">
-            @yield('content')
-        </main>
+        @if (Route::has('login'))
+                    
+            @auth
+            <div class="content">
+                <a href="{{ url('/home') }}" class="btn btn-light">Home</a>
+            </div>
+                
+            @else
+                <main class="main-content">
+                    @yield('content')
+                </main>      
+            @endauth
+                    
+        @endif
+        
     </div>
 </body>
 </html>
