@@ -113,7 +113,7 @@ export default {
                         
                         if (newConsultation.state == 'en espera') {
                             if (newPatient.attended_by == 0) {
-                                console.log("urgencia")
+                                
                                 newConsultation.state = 'ocupado'
                                 newConsultation.attending_patient = newPatient.id
                                 newPatient.attended_by = newConsultation.id
@@ -127,7 +127,7 @@ export default {
                     } else if ((newPatient.type == 'Anciano' || newPatient.type == 'Joven') && (newConsultation.type_consultation == 'CGI' && newPatient.priority <= 4)) {
                         if (newConsultation.state == 'en espera') {
                             if (newPatient.attended_by == 0) {
-                                console.log("cgi")
+                                
                                 newConsultation.state = 'ocupado'
                                 newConsultation.attending_patient = newPatient.id
                                 newPatient.attended_by = newConsultation.id
@@ -139,7 +139,7 @@ export default {
                         }   
                     } else if ((newPatient.type == 'Niño' && newPatient.priority <= 4) && newConsultation.type_consultation == 'Pediatría') {
                         if (newConsultation.state == 'en espera') {
-                            console.log("pediatria")
+                            
                             if (newPatient.attended_by == 0) {
                                 newConsultation.state = 'ocupado'
                                 newConsultation.attending_patient = newPatient.id
@@ -165,7 +165,7 @@ export default {
             var third = []
 
             this.pendingRoom.forEach(patient => {
-                console.log(patient)
+                
                 if (patient.priority >= 4.5) {
                     first.push(patient)
                 } else if (patient.type == 'Niño' || patient.type == 'Anciano') {
